@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dauntless Loadout Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>Dauntless Loadout Builder</h1>
+    <div class="actions">
+      <button class="btn" id="reset">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="cells" aria-label="Cells">
+      <div>
+        <p class="panel-title">Cells</p>
+        <input class="search" type="search" placeholder="Search cells" aria-label="Search cells">
+      </div>
+
+      <div class="tabs" role="group" aria-label="Filter by cell type">
+        <button class="tab" aria-pressed="true">All</button>
+        <button class="tab" aria-pressed="false" style="--c:var(--power)"><span class="dot"></span>Power</button>
+        <button class="tab" aria-pressed="false" style="--c:var(--technique)"><span class="dot"></span>Technique</button>
+        <button class="tab" aria-pressed="false" style="--c:var(--defense)"><span class="dot"></span>Defense</button>
+        <button class="tab" aria-pressed="false" style="--c:var(--mobility)"><span class="dot"></span>Mobility</button>
+        <button class="tab" aria-pressed="false" style="--c:var(--utility)"><span class="dot"></span>Utility</button>
+      </div>
+
+      <ul class="cell-list">
+        <li><button class="cell-item" style="--c:var(--power)"><span class="dot"></span><span>Cell name<small>Power</small></span></button></li>
+        <li><button class="cell-item" style="--c:var(--technique)"><span class="dot"></span><span>Cell name<small>Technique</small></span></button></li>
+        <li><button class="cell-item" style="--c:var(--defense)"><span class="dot"></span><span>Cell name<small>Defense</small></span></button></li>
+        <li><button class="cell-item" style="--c:var(--mobility)"><span class="dot"></span><span>Cell name<small>Mobility</small></span></button></li>
+        <li><button class="cell-item" style="--c:var(--utility)"><span class="dot"></span><span>Cell name<small>Utility</small></span></button></li>
+      </ul>
+    </aside>
+
+    <section class="gear" aria-label="Equipment">
+
+      <div>
+        <p class="panel-title">Weapon</p>
+        <div class="slot weapon" data-slot="weapon" data-label="Weapon">
+          <button class="gear-pick" aria-label="Choose weapon">
+            <div class="gear-icon" aria-hidden="true">+</div>
+            <div class="gear-info">
+              <div class="type">Weapon</div>
+              <div class="name empty">Choose a weapon</div>
+            </div>
+          </button>
+          <div class="sockets" aria-label="Weapon cell slots">
+            <button class="socket" aria-label="Weapon cell slot 1"></button>
+            <button class="socket" aria-label="Weapon cell slot 2"></button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="panel-title">Armor</p>
+        <div class="armor">
+          <div class="slot" data-slot="head" data-label="Head">
+            <button class="gear-pick" aria-label="Choose head armor">
+              <div class="gear-icon" aria-hidden="true">+</div>
+              <div class="gear-info"><div class="type">Head</div><div class="name empty">Choose armor</div></div>
+            </button>
+            <div class="sockets"><button class="socket" aria-label="Head cell slot"></button></div>
+          </div>
+          <div class="slot" data-slot="torso" data-label="Torso">
+            <button class="gear-pick" aria-label="Choose torso armor">
+              <div class="gear-icon" aria-hidden="true">+</div>
+              <div class="gear-info"><div class="type">Torso</div><div class="name empty">Choose armor</div></div>
+            </button>
+            <div class="sockets"><button class="socket" aria-label="Torso cell slot"></button></div>
+          </div>
+          <div class="slot" data-slot="arms" data-label="Arms">
+            <button class="gear-pick" aria-label="Choose arm armor">
+              <div class="gear-icon" aria-hidden="true">+</div>
+              <div class="gear-info"><div class="type">Arms</div><div class="name empty">Choose armor</div></div>
+            </button>
+            <div class="sockets"><button class="socket" aria-label="Arms cell slot"></button></div>
+          </div>
+          <div class="slot" data-slot="legs" data-label="Legs">
+            <button class="gear-pick" aria-label="Choose leg armor">
+              <div class="gear-icon" aria-hidden="true">+</div>
+              <div class="gear-info"><div class="type">Legs</div><div class="name empty">Choose armor</div></div>
+            </button>
+            <div class="sockets"><button class="socket" aria-label="Legs cell slot"></button></div>
+          </div>
+          <div class="slot" data-slot="lantern" data-label="Lantern">
+            <button class="gear-pick" aria-label="Choose lantern">
+              <div class="gear-icon" aria-hidden="true">+</div>
+              <div class="gear-info"><div class="type">Lantern</div><div class="name empty">Choose lantern</div></div>
+            </button>
+            <div class="sockets"><button class="socket" aria-label="Lantern cell slot"></button></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <aside class="stats" aria-label="Build stats">
+
+      <div class="stat-group">
+        <p class="panel-title" style="margin:0">Perks</p>
+        <p class="empty-note">Add cells to see your active perks.</p>
+        <div>
+          <div class="row"><span class="label">Perk name</span><span class="value">0 / 6</span></div>
+          <div class="bar" style="--c:var(--power); --w:0%"><i></i></div>
+        </div>
+      </div>
+
+      <div class="stat-group">
+        <p class="panel-title" style="margin:0">Resistance</p>
+        <div class="row"><span class="label">Blaze</span><span class="value">0</span></div>
+        <div class="row"><span class="label">Frost</span><span class="value">0</span></div>
+        <div class="row"><span class="label">Shock</span><span class="value">0</span></div>
+        <div class="row"><span class="label">Terra</span><span class="value">0</span></div>
+        <div class="row"><span class="label">Umbral</span><span class="value">0</span></div>
+        <div class="row"><span class="label">Radiant</span><span class="value">0</span></div>
+      </div>
+
+    </aside>
+
+  </main>
+</div>
+
+<dialog class="picker" id="picker" aria-labelledby="picker-title">
+  <div class="picker-body">
+    <div class="picker-head">
+      <h2 id="picker-title">Choose item</h2>
+      <button class="icon-btn" id="picker-close" aria-label="Close">&times;</button>
+    </div>
+    <input class="search" id="picker-search" type="search" placeholder="Search" aria-label="Search items">
+    <ul class="picker-list" id="picker-list"></ul>
+    <div class="picker-foot">
+      <button class="btn" id="picker-clear">Clear slot</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

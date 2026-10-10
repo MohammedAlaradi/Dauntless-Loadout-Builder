@@ -1,0 +1,14 @@
+{
+  "weapons": [
+    { "id": "sword-01", "name": "Example Sword", "detail": "Sword", "cells": ["power", "technique"] },
+    { "id": "hammer-01", "name": "Example Hammer", "detail": "Hammer", "cells": ["power", "defense"] },
+    { "id": "pike-01", "name": "Example War Pike", "detail": "War Pike", "cells": ["technique", "mobility"] }
+  ],
+  "armor": {
+    "head":    [ { "id": "head-01",  "name": "Example Helm",     "detail": "Example set", "cells": ["defense"] } ],
+    "torso":   [ { "id": "torso-01", "name": "Example Cuirass",  "detail": "Example set", "cells": ["power"] } ],
+    "arms":    [ { "id": "arms-01",  "name": "Example Gauntlets","detail": "Example set", "cells": ["technique"] } ],
+    "legs":    [ { "id": "legs-01",  "name": "Example Greaves",  "detail": "Example set", "cells": ["mobility"] } ],
+    "lantern": [ { "id": "lantern-01","name": "Example Lantern", "detail": "Lantern",     "cells": ["utility"] } ]
+  }
+}
